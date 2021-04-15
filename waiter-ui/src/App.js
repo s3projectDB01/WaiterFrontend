@@ -1,16 +1,18 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
-import Row from "react-bootstrap/Row";
 import { Counter } from "./features/counter/Counter";
-import "./css/App.css";
+import "./css/App.scss";
 import OrderList from "./components/OrderList";
-// import axios from "axios";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
+
 
 function App() {
   return (
-    <div className="App">
-      <OrderList></OrderList>
+    <div className="container">
+      <Header></Header>
+      <MainContent></MainContent>
+      <Footer></Footer>
     </div>
   );
 }
