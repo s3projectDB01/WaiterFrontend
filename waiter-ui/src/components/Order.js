@@ -1,12 +1,14 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import MainContent from "./MainContent";
 
-const Order = ({ orderList, status, id, price, date }) => {
+const Order = ({ orderList, status, price, date, tableNumber }) => {
   return (
     <div>
-      <Card style={{ width: "18rem" }}>
+      <Card>
         <Card.Body>
-          <Card.Title> OrderID: {id}</Card.Title>
+          <Card.Title> TableNumber: {tableNumber}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
             Order Details
           </Card.Subtitle>
@@ -14,8 +16,9 @@ const Order = ({ orderList, status, id, price, date }) => {
             Date: {date}, OrderList: {orderList}, Status: {status}, Price:{" "}
             {price}
           </Card.Text>
-          {/* <Card.Link href="#">Card Link</Card.Link>
-          <Card.Link href="#">Another Link</Card.Link> */}
+          <Button onClick={() => <MainContent></MainContent>}>
+            View Order
+          </Button>
         </Card.Body>
       </Card>
     </div>

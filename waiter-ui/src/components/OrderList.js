@@ -1,6 +1,14 @@
 import React from "react";
 import Order from "./Order";
-import { Grid } from "@material-ui/core/";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+{
+  /* 
+              ></Order> */
+}
 
 class OrderList extends React.Component {
   constructor(props) {
@@ -16,18 +24,21 @@ class OrderList extends React.Component {
     return (
       <div>
         {orders.map((order) => (
-          <Grid container spacing={1}>
-            <Grid container item xs={12} spacing={3}>
-              <Order
-                key={order.id}
-                date={order.date}
-                price={order.price}
-                id={order.id}
-                status={order.status}
-                orderList={order.OrderList}
-              ></Order>
-            </Grid>
-          </Grid>
+          <Container className="list">
+            <Row>
+              <Col sm={12}>
+                <Order
+                  key={order.id}
+                  date={order.date}
+                  price={order.price}
+                  id={order.id}
+                  status={order.status}
+                  orderList={order.orderList}
+                  tableNumber={order.tableNumber}
+                ></Order>
+              </Col>
+            </Row>
+          </Container>
         ))}
       </div>
     );
