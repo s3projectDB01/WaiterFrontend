@@ -1,14 +1,7 @@
 import React from "react";
 import Order from "./Order";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-{
-  /* 
-              ></Order> */
-}
+import "../css/App.css";
 
 class OrderList extends React.Component {
   constructor(props) {
@@ -22,23 +15,17 @@ class OrderList extends React.Component {
 
   static getOrders(orders) {
     return (
-      <div>
+      <div className="grid-container">
         {orders.map((order) => (
-          <Container className="list">
-            <Row>
-              <Col sm={12}>
-                <Order
-                  key={order.id}
-                  date={order.date}
-                  price={order.price}
-                  id={order.id}
-                  status={order.status}
-                  orderList={order.orderList}
-                  tableNumber={order.tableNumber}
-                ></Order>
-              </Col>
-            </Row>
-          </Container>
+          <Order
+            key={order.id}
+            date={order.date}
+            price={order.price}
+            id={order.id}
+            status={order.status}
+            orderList={order.orderList}
+            tableNumber={order.tableNumber}
+          ></Order>
         ))}
       </div>
     );

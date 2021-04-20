@@ -1,33 +1,24 @@
 import React, { useState } from "react";
-import Card from "react-bootstrap/Card";
-import MainContent from "./MainContent";
-import Button from "react-bootstrap/Button";
-// import { withAlert } from "react-alert";
+import OrderPopUpMessage from "./OrderPopUpMessage";
+import OrderCard from "./OrderCard";
 
 function Order({ orderList, status, price, date, tableNumber }) {
-  //  const alert = withAlert();
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div>
-      <Card>
-        <Card.Body>
-          <Card.Title> TableNumber: {tableNumber}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
-            Order Details
-          </Card.Subtitle>
-          <Card.Text>
-            Date: {date}, OrderList: {orderList}, Status: {status}, Price:{" "}
-            {"€" + price}
-          </Card.Text>
-          <Button
-            onClick={() => {
-              // alert.show("Oh look, an alert!");
-            }}
-          >
-            View Order
-          </Button>
-        </Card.Body>
-      </Card>
+      <OrderPopUpMessage
+        show={show}
+        handleClose={handleClose}
+        orderList={orderList}
+      ></OrderPopUpMessage>
+      <OrderCard
+        tableNumber={tableNumber}
+        status={status}
+        handleShow={handleShow}
+      ></OrderCard>
     </div>
   );
 }
