@@ -7,7 +7,7 @@ const OrderCard = ({ tableNumber, status, handleShow }) => {
     <div>
       <Card>
         <Card.Body>
-          <Card.Title> TableNumber: {tableNumber}</Card.Title>
+          <Card.Title> Table: {tableNumber}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
             Order Details
           </Card.Subtitle>

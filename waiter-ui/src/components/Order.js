@@ -13,6 +13,9 @@ function Order({ orderList, status, price, date, tableNumber }) {
         show={show}
         handleClose={handleClose}
         orderList={orderList}
+        tableNumber={tableNumber}
+        price={price}
+        date={date}
       ></OrderPopUpMessage>
       <OrderCard
         tableNumber={tableNumber}
