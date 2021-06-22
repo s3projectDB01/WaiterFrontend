@@ -32,11 +32,11 @@ export function GenerateQr(){
                 body: JSON.stringify(newSession)
             };
     
-            fetch('https://localhost:6001/Session', requestOptions)
+            fetch(window.globalConfig.API_URL + "/Order/Session", requestOptions)
                 .then(response => response.json())
                 .then(data => {
                     setSessionId(data.id)
-                    setQr("https://localhost:6001/Session/GetQR/" + data.id);
+                    setQr(window.globalConfig.API_URL + "/Order/Session/GetQR/" + data.id);
                 })
         } else {
             alert('Please insert a table nr and name');
